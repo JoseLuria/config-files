@@ -11,6 +11,14 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'alvan/vim-closetag'
 Plug 'preservim/nerdtree'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'andrewradev/tagalong.vim'
+Plug 'epilande/vim-react-snippets'
+Plug 'SirVer/ultisnips'
+Plug 'xuyuanp/nerdtree-git-plugin'
+"Plug 'kevinhwang91/rnvimr'
+Plug 'vimlab/split-term.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 call plug#end()
 
@@ -36,13 +44,33 @@ set termguicolors
 
 " Identación
 filetype indent on
+
 filetype plugin indent on
 
 
 " CONFIGURACIÓN DE PLUGINS
 
+" Autoclose Tags VIM
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
+
 " FZF
-map <C-F> :FZF<CR>
+map <C-F> :Files<CR>
+
+" FZF Color Scheme
+let g:fzf_colors =
+            \ { 'fg':      ['fg', 'Normal'],
+            \ 'bg':      ['bg', 'Normal'],
+            \ 'hl':      ['fg', 'Comment'],
+            \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+            \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+            \ 'hl+':     ['fg', 'Statement'],
+            \ 'info':    ['fg', 'PreProc'],
+            \ 'border':  ['fg', 'Comment'],
+            \ 'prompt':  ['fg', 'Conditional'],
+            \ 'pointer': ['fg', 'Exception'],
+            \ 'marker':  ['fg', 'Keyword'],
+            \ 'spinner': ['fg', 'Label'],
+            \ 'header':  ['fg', 'Comment'] }
 
 " Lightline
 let g:lightline = {
@@ -59,15 +87,17 @@ let g:lightline = {
 " Lua Colorizer
 lua require'plug-colorizer'
 
+" Terminal Below
+set splitbelow
+
 " ATAJOS DE TECLADO
 
-" NERDTree
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
+" Coc Split Term
+"nmap <silent> <C-n> <Plug>(coc-split-term-toggle)
+map <C-N> :10Term<CR> 
 
-" Bracey
-"map <C-B> :Bracey<CR>
-"map <C-C> :BraceyStop<CR>
+" NERDTree
+nnoremap <C-t> :NERDTreeToggle<CR>
 
 " Abrir una pestña
 map <C-A> :tabnew<CR>
