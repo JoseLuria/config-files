@@ -15,10 +15,14 @@ Plug 'andrewradev/tagalong.vim'
 Plug 'epilande/vim-react-snippets'
 Plug 'SirVer/ultisnips'
 Plug 'xuyuanp/nerdtree-git-plugin'
-"Plug 'kevinhwang91/rnvimr'
-Plug 'vimlab/split-term.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'kdheepak/lazygit.nvim'
+Plug 'chrisbra/vim-commentary'
+Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'mortonfox/nerdtree-term'
+Plug 'tribela/vim-transparent'
+Plug 'rcarriga/nvim-notify'
 
 call plug#end()
 
@@ -42,11 +46,16 @@ set encoding=UTF-8
 " Colores de la terminal
 set termguicolors
 
+" Copiar al portapapeles
+set clipboard=unnamedplus
+
 " Identación
 filetype indent on
 
 filetype plugin indent on
 
+" Eliminar numeros al seleccionar texto
+set mouse=a
 
 " CONFIGURACIÓN DE PLUGINS
 
@@ -92,18 +101,23 @@ set splitbelow
 
 " ATAJOS DE TECLADO
 
-" Coc Split Term
-"nmap <silent> <C-n> <Plug>(coc-split-term-toggle)
-map <C-N> :10Term<CR> 
+" LazyGit
+map <C-E> :LazyGit<CR>
 
 " NERDTree
-nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <C-T> :NERDTreeToggle<CR>
+
+" Abrir configuracion
+map <C-M> :edit /home/jose/.config/nvim/init.vim<CR> 
 
 " Abrir una pestña
 map <C-A> :tabnew<CR>
 
 " Abrir Startify
 map <C-S> :Startify<CR>
+
+" Cambiar a la pestaña anterior
+map <C-B> :tabprevious<CR>
 
 " Cambiar a la siguiente pestaña
 map <C-Z> :tabn<CR>
