@@ -23,11 +23,11 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'mortonfox/nerdtree-term'
 Plug 'tribela/vim-transparent'
 Plug 'rcarriga/nvim-notify'
+Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
 
 " CONFIGURACIÓN GENERAL
-
 " Sintaxis
 syntax on
 
@@ -58,6 +58,12 @@ filetype plugin indent on
 set mouse=a
 
 " CONFIGURACIÓN DE PLUGINS
+" Brakets Colors
+let g:rainbow#max_level = 16
+
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}']]
+
+autocmd FileType * RainbowParentheses
 
 " Autoclose Tags VIM
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
