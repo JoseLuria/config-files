@@ -1,0 +1,1 @@
+/home/jose/.config/qtile/config.py
