@@ -1,0 +1,53 @@
+#
+# ATAJOS DE TECLAS DE BSPWM
+#
+
+# Abrir la terminal de Alacritty
+# (Windows + Enter)
+super + Return
+	alacritty
+
+# Abrir Rofi
+# (Windows + X)
+super + x
+	rofi -show drun
+
+# Quitar / Recargar BSPWM
+# (Windows + Alt + E) / (Windows + Alt + R)
+super + alt + {e,r}
+	bspc {quit,wm -r}
+
+# Cerrar ventana / Cerrar ventana y detener proceso 
+# (Windows + Q) / (Windows + Shift + Q)
+super + {_,shift + }q
+	bspc node -{c,k}
+
+# Alternar entre Layouts (Tiled and Monocle)
+# (Windows + M)
+super + m
+	bspc desktop -l next
+
+# Cambiar de ventana / Mover la posicion de la ventana
+# (Windows + Left | Down | Up | Right) / (Windows + Shift + Left | Down | Up | Right)
+super + {_,shift + }{Left,Down,Up,Right}
+	bspc node -{f,s} {west,south,north,east}
+
+# Cambiar de escritorio / Mover ventana a escritorio
+# (Windows + 1 al 9) / (Windows + Shift + 1 al 9) 
+super + {_,shift + }{1-9,0}
+	bspc {desktop -f,node -d} '^{1-9,10}'
+
+# Expandir el tamaño de la ventana
+# (Windows + Alt + Left | Down | Up | Right)
+super + alt + {Left,Down,Up,Right}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+
+# Contraer el tamaño de la ventana
+# (Windows + Alt + Shift + Left | Down | Up | Right) 
+super + alt + shift + {Left,Down,Up,Right}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+
+# Mover una ventana flotante
+# (Windows + Ctrl + Left | Down | Up | Right)
+super + ctrl + {Left,Down,Up,Right}
+	bspc node -v {-20 0,0 20,0 -20,20 0}
