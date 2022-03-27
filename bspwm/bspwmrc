@@ -1,0 +1,51 @@
+#! /bin/sh
+
+#
+# ARCHIVO DE CONFIGURACION DE BSPWM
+#
+
+# Inicia SXHKD (Se encarga de los atajos de teclado)
+sxhkd &
+
+# Inicia el servicio de Wifi
+nm-applet &
+
+# Inicia compton (Para la transparencia de las ventanas)
+compton &
+
+# La verdad no se para que sirve (De cualquier forma no lo toques)
+bspc monitor -d I II III IV V VI VII VIII IX X
+
+# La longirud del borde de la ventana
+bspc config border_width         2
+
+# La logitud de la separacion entre el borde de la pantalla y la ventana
+bspc config window_gap          12
+
+# De este tampoco tengo idea de para que sirve
+bspc config split_ratio          0.52
+
+# Elimina los bordes en pantalla completa
+bspc config borderless_monocle   true
+
+# Elimina las separacion entre el borde de la pantalla y la ventana en pantalla completa
+bspc config gapless_monocle      true
+
+# Tampoco se para que sirve (Lo deje tal cual como viene por defecto)
+bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Chromium desktop='^2'
+bspc rule -a mplayer2 state=floating
+bspc rule -a Kupfer.py focus=on
+bspc rule -a Screenkey manage=off
+
+# EL color del borde de la ventana por defecto
+bspc config normal_border_color  "#21222c"
+
+# EL color del borde de la ventana seleccionada
+bspc config focused_border_color "#d6acff"
+
+# EL color del borde de la ventana por urgente
+bspc config urgent_border_color  "#ff5555"
+
+# Establece el fondo de pantalla
+feh --bg-fill /home/jose/Imágenes/dracula-mint.png
