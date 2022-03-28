@@ -20,11 +20,11 @@ cd config-files
 
 ## Lista de Archivos de configuración disponibles
 
-- [Configuración de Neovim](/nvim/)
-- [Configuración de Alacritty](/alacritty/)
-- [Configuración de BSPWM](/bspwm/)
-- [Configuración de SXHKD](/sxhkd/)
-- [Tema personalizado de Oh my szh](/oh-my-zsh/)
+- [Configuración de Neovim](/nvim/nvim.md)
+- [Configuración de Alacritty](/alacritty/alacritty.md)
+- [Configuración de BSPWM](/bspwm/bspwm.md)
+- [Configuración de SXHKD](/sxhkd/sxhkd.md)
+- [Tema personalizado de Oh my szh](/oh-my-zsh/oh-my-zsh.md)
 
 ## Licencia
 
